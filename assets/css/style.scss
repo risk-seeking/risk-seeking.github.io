@@ -1,6 +1,5 @@
 ---
 ---
-
 @import "{{ site.theme }}";
 
 body {
@@ -8,10 +7,36 @@ body {
   font-family: "Times New Roman", Times, serif;
   font-size: 12pt;
   color: #000000;
+  line-height: 1.6;
 }
 
 .wrapper {
   background-color: #F0EAE2;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  border-left: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #C0C0C0 #F0EAE2;
+  height: 100vh;
+}
+
+/* Webkit scrollbar styles (for Chrome, Safari, newer versions of Opera) */
+.wrapper::-webkit-scrollbar {
+  width: 16px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+  background: #F0EAE2;
+  border-left: 1px solid #C0C0C0;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: #C0C0C0;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #FFFFFF;
 }
 
 header, section, footer {
@@ -20,18 +45,67 @@ header, section, footer {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 5px;
 }
 
 a {
-  color: #000000;
-  text-decoration: underline;
+  color: #0000FF;
+  text-decoration: none;
+  border-bottom: 1px dotted #0000FF;
 }
 
 a:hover {
-  font-weight: normal;
   text-decoration: none;
+  border-bottom: 1px solid #0000FF;
 }
 
 code, pre {
   font-family: Consolas, monospace;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  padding: 2px 4px;
+  font-size: 0.9em;
+}
+
+header, footer {
+  text-align: center;
+}
+
+.ascii-divider {
+  font-family: Consolas, monospace;
+  text-align: center;
+  margin: 20px 0;
+  color: #555555;
+}
+
+.ascii-box {
+  font-family: Consolas, monospace;
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  white-space: pre-wrap;
+  margin: 10px 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  flex: 1;
+  padding-right: 20px;
+}
+
+section {
+  flex: 2;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    padding-right: 0;
+  }
 }
