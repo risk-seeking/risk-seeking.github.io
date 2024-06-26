@@ -11,7 +11,7 @@
         <header>
             <h1>{{ site.title }}</h1>
             <p>{{ site.description }}</p>
-            <p class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+            <div class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</div>
         </header>
         
         <div class="container">
@@ -29,13 +29,13 @@
                 </div>
             </div>
             
-            <section>
+            <div class="main-content">
                 {{ content }}
-            </section>
+            </div>
         </div>
         
         <footer>
-            <p class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+            <div class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</div>
             <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
         </footer>
     </div>
