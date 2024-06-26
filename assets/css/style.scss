@@ -8,35 +8,17 @@ body {
   font-size: 12pt;
   color: #000000;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
-  background-color: #F0EAE2;
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #F0EAE2;
   border-left: 1px solid #CCCCCC;
   border-right: 1px solid #CCCCCC;
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: #C0C0C0 #F0EAE2;
-  height: 100vh;
-}
-
-/* Webkit scrollbar styles (for Chrome, Safari, newer versions of Opera) */
-.wrapper::-webkit-scrollbar {
-  width: 16px;
-}
-
-.wrapper::-webkit-scrollbar-track {
-  background: #F0EAE2;
-  border-left: 1px solid #C0C0C0;
-}
-
-.wrapper::-webkit-scrollbar-thumb {
-  background-color: #C0C0C0;
-  border-right: 1px solid #000000;
-  border-left: 1px solid #FFFFFF;
 }
 
 header, section, footer {
@@ -68,10 +50,6 @@ code, pre {
   font-size: 0.9em;
 }
 
-header, footer {
-  text-align: center;
-}
-
 .ascii-divider {
   font-family: Consolas, monospace;
   text-align: center;
@@ -95,10 +73,12 @@ header, footer {
 .sidebar {
   flex: 1;
   padding-right: 20px;
+  min-width: 200px;
 }
 
-section {
+.main-content {
   flex: 2;
+  min-width: 300px;
 }
 
 @media screen and (max-width: 600px) {
