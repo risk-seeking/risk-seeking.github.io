@@ -1,43 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-</head>
-<body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    {% include head-custom.html %}
+  </head>
+  <body>
     <div class="wrapper">
-        <header>
-            <h1>{{ site.title }}</h1>
-            <p>{{ site.description }}</p>
-            <div class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</div>
-        </header>
-        
-        <div class="container">
-            <div class="sidebar">
-                <h2>About Me</h2>
-                <p>Financial Data Scientist and AI Engineer passionate about leveraging cutting-edge technologies to solve complex financial problems.</p>
-                <div class="ascii-box">
+      <header>
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+
+        {% if site.logo %}
+          <img src="{{site.logo | relative_url}}" alt="Logo" />
+        {% endif %}
+
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+        <p class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+
+        <h2>About Me</h2>
+        <p>Financial Data Scientist and AI Engineer passionate about leveraging cutting-edge technologies to solve complex financial problems.</p>
+
+        <div class="ascii-box">
 +----------------+
 |   Contact Me   |
 +----------------+
-| [GitHub]       |
-| [LinkedIn]     |
-| [Email]        |
+| <a href="https://github.com/yourusername">[GitHub]</a>       |
+| <a href="https://linkedin.com/in/yourusername">[LinkedIn]</a>    |
+| <a href="mailto:your.email@example.com">[Email]</a>        |
 +----------------+
-                </div>
-            </div>
-            
-            <div class="main-content">
-                {{ content }}
-            </div>
         </div>
-        
-        <footer>
-            <div class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</div>
-            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-        </footer>
+
+        <p class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+
+      </header>
+      <section>
+
+      {{ content }}
+
+      </section>
+      <footer>
+        <p class="ascii-divider">=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</p>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | default: site.github.repository_name }}. All rights reserved.</p>
+      </footer>
     </div>
-</body>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  </body>
 </html>
